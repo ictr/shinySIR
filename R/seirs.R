@@ -106,7 +106,7 @@ seirs.app <- shinyApp(
             as.data.frame() %>% filter(time > input$T[1])
 
         out %>% ggplot() +
-            geom_line(aes(x = time, y = S, colour = "aS"), size = 5, alpha = 0.7) +
+            geom_line(aes(x = time, y = S, colour = "purple"), size = 5, alpha = 0.7) +
             geom_line(aes(x = time, y = R, colour = "dR"), size = 1, alpha = 0.7) +
             geom_line(aes(x = time, y = E * 50, colour = "bE"), size = 1, alpha = 0.7) +
             geom_line(aes(x = time, y = I * 50, colour = "cI"), size = 1, alpha = 0.7) +
