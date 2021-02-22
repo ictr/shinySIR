@@ -17,14 +17,14 @@ plot_model <- function(output, linesize, textsize, xlabel, ylabel, legend_title,
 
     output$variable <- factor(output$variable, levels = levels)
 
-    print(paste(xlabel, ylabel, linesize, output$variable))
-    # ggplot(output, aes(x = time, y = value, colour = as.factor(variable))) +
-    #         geom_line(size = 5) +
-    #         scale_colour_manual(legend_title, values = values, ...) +
-    #          xlab(xlabel) +
-    #         theme_bw() + theme(axis.text = element_text(size = textsize),
-    #                            axis.title= element_text(size = textsize + 2),
-    #                            legend.text = element_text(size = textsize),
-    #                            legend.title = element_text(size = textsize + 2) )
+    print(paste(summary(output)))
+  ggplot(output, aes(x = time, y = value, colour = as.factor(variable))) +
+           geom_line(size = 5) +
+           scale_colour_manual(legend_title, values = values, ...) +
+            xlab(xlabel) +
+           theme_bw() + theme(axis.text = element_text(size = textsize),
+                              axis.title= element_text(size = textsize + 2),
+                              legend.text = element_text(size = textsize),
+                             legend.title = element_text(size = textsize + 2) )
 
 }
