@@ -20,7 +20,7 @@ plot_model <- function(output, linesize, textsize, xlabel, ylabel, legend_title,
     colors <- sapply(output$variable, FUN=function(x){
         if (x=="I") "blue" else "white"
     })
-  ggplot(output, aes(x = time, y = value, colour = as.factor(colors)) +
+  ggplot(output, aes(x = time, y = value, colour = as.factor(colors))) +
            geom_line(size = 1.2) +
            scale_colour_manual(legend_title, values = values, ...) +
            ylab(ylabel) +  xlab(xlabel) +
