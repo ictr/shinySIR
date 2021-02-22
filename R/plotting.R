@@ -17,7 +17,7 @@ plot_model <- function(output, linesize, textsize, xlabel, ylabel, legend_title,
 
     output$variable <- factor(output$variable, levels = levels)
 
-    colors = sapply(output$variable, function(x){
+    colors = sapply(output$variable, FUN=function(x){
         if (x=="I") "blue" else "white"
     })
   ggplot(output, aes(x = time, y = value, colour = colors) +
