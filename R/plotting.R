@@ -21,7 +21,7 @@ plot_model <- function(output, linesize, textsize, xlabel, ylabel, legend_title,
     ggplot(output, aes(x = time, y = value, colour = as.factor(variable))) +
             geom_line(size = 5) +
             scale_colour_manual(legend_title, values = values, ...) +
-            ylab(ylabel) + xlab(xlabel) +
+             xlab(xlabel) +
             theme_bw() + theme(axis.text = element_text(size = textsize),
                                axis.title= element_text(size = textsize + 2),
                                legend.text = element_text(size = textsize),
