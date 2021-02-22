@@ -17,9 +17,11 @@ plot_model <- function(output, linesize, textsize, xlabel, ylabel, legend_title,
 
     output$variable <- factor(output$variable, levels = levels)
 
-    print(paste(as.factor(output$variable)))
-  ggplot(output, aes(x = time, y = value, colour = as.factor(variable))) +
-           geom_line(size = c(0, 0, 1.2)) +
+    colors = sapply(output$variable, function(x){
+        if (x=="I") "blue" else "white"
+    })
+  ggplot(output, aes(x = time, y = value, colour = colors) +
+           geom_line(size = 1.2) +
            scale_colour_manual(legend_title, values = values, ...) +
            ylab(ylabel) +  xlab(xlabel) +
            theme_bw() + theme(axis.text = element_text(size = textsize),
