@@ -17,6 +17,7 @@ plot_model <- function(output, linesize, textsize, xlabel, ylabel, legend_title,
 
     output$variable <- factor(output$variable, levels = levels)
 
+    print(paste(xlabel, ylabel, linesize, output))
     ggplot(output, aes(x = time, y = value, colour = as.factor(variable))) +
             geom_line(size = linesize) +
             scale_colour_manual(legend_title, values = values, ...) +
